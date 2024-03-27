@@ -3,8 +3,8 @@ stack_t *head = NULL;
 
 /**
  * main - Entry Point
- * @argc: Args count
- * @argv: list of args
+ * @ac: Ac count
+ * @av: list of args vector
  * Return: Always 0
  */
 
@@ -22,10 +22,10 @@ int main(int ac, char *av[])
 
 /**
  * creat_node - Creates a node.
- * @n: Nbr to Go Inside The Node.
+ * @nbr: Nbr to Go Inside The Node.
  * Return: Sucess a Pointer To The Node. Otherwise NULL.
  */
-stack_t *creat_node(int n)
+stack_t *creat_node(int nbr)
 {
 	stack_t *node;
 
@@ -34,7 +34,7 @@ stack_t *creat_node(int n)
 		error_handling(4);
 	node->next = NULL;
 	node->prev = NULL;
-	node->n = n;
+	node->nbr = nbr;
 	return (node);
 }
 
@@ -48,7 +48,7 @@ void free_aloc_nodes(void)
 	if (head == NULL)
 		return;
 
-	while (head != NULL)
+	while (head)
 	{
 		tmp = head;
 		head = head->next;
@@ -59,25 +59,25 @@ void free_aloc_nodes(void)
 
 /**
  * push_to_queue - Adds Node To The Queue.
- * @new_node: Pointer To The New Node.
- * @ln: Line Number Of The Opcode.
+ * @nw_node: Pointer To The New Node.
+ * @line: Line Number Of The Opcode.
  */
-void push_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void push_to_queue(stack_t **nw_node, __attribute__((unused))unsigned int line)
 {
 	stack_t *tmp;
 
-	if (new_node == NULL || *new_node == NULL)
+	if (nw_node == NULL || *nw_node == NULL)
 		exit(EXIT_FAILURE);
 	if (head == NULL)
 	{
-		head = *new_node;
+		head = *nw_node;
 		return;
 	}
 	tmp = head;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 
-	tmp->next = *new_node;
-	(*new_node)->prev = tmp;
+	tmp->next = *nw_node;
+	(*nw_node)->prev = tmp;
 
 }

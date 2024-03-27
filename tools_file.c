@@ -29,8 +29,9 @@ void ft_read(FILE *fd)
 	int line_nbr, form = 0;
 	char *buff = NULL;
 	size_t len = 0;
+	ssize_t x = getline(&buff, &len, fd);
 
-	for (line_nbr = 1; getline(&buff, &len, fd) != -1; line_nbr++)
+	for (line_nbr = 1; x != -1; line_nbr++)
 	{
 		form = parse_line_to_call_func(buff, line_nbr, form);
 	}

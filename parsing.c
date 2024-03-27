@@ -42,7 +42,7 @@ void error_handling(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_aloc_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -83,7 +83,7 @@ void more_error_handling(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_aloc_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -111,6 +111,6 @@ void string_error_handling(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_aloc_nodes();
 	exit(EXIT_FAILURE);
 }

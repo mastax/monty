@@ -85,10 +85,10 @@ void div_sec_to_top(stack_t **stack, unsigned int line_number)
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "div");
+		more_error_handling(8, line_number, "div");
 
 	if ((*stack)->n == 0)
-		more_err(9, line_number);
+		more_error_handling(9, line_number);
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n / (*stack)->prev->n;
 	(*stack)->n = sum;
