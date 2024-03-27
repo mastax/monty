@@ -44,35 +44,35 @@ typedef void (*op_func)(stack_t **, unsigned int);
 /*file operations*/
 void ft_open(char *file_nam);
 void ft_read(FILE *fd);
-int parse_line_to_call_func(char *buffer, int line_number, int format);
-void find_and_match(char *opcode, char *value, int ln, int format);
+int parse_line_to_call_func(char *buff, int line_nbr, int form);
+void find_and_match(char *opcode, char *val, int ln, int form);
 int len_chars(FILE *);
 /*Stack operations*/
 stack_t *creat_node(int n);
 void free_aloc_nodes(void);
-void push_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln);
-void push_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln);
-void print_all_stack(stack_t **stack, unsigned int line_number);
-void call_function(op_func func, char *op, char *val, int ln, int format);
+void push_to_stack(stack_t **nw_node, __attribute__((unused))unsigned int ln);
+void push_to_queue(stack_t **nw_node, __attribute__((unused))unsigned int ln);
+void print_all_stack(stack_t **stck, unsigned int line_nbr);
+void call_function(op_func func, char *op, char *value, int line, int form);
 
-void pop_top_stack(stack_t **stack, unsigned int line_number);
-void print_top_stack(stack_t **stack, unsigned int line_number);
-void nop_do_nothing(stack_t **stack, unsigned int line_number);
-void swap_2_at_top(stack_t **stack, unsigned int line_number);
+void pop_top_stack(stack_t **stck, unsigned int line_nbr);
+void print_top_stack(stack_t **stck, unsigned int line_nbr);
+void nop_do_nothing(stack_t **stck, unsigned int line_nbr);
+void swap_2_at_top(stack_t **stck, unsigned int line_nbr);
 /*Math operations with nodes*/
-void add_2_at_top(stack_t **stack, unsigned int line_number);
-void sub_2_at_top(stack_t **stack, unsigned int line_number);
-void div_sec_to_top(stack_t **stack, unsigned int line_number);
-void mul_sec_to_top(stack_t **stack, unsigned int line_number);
-void mod_sec_to_top(stack_t **stack, unsigned int line_number);
+void add_2_at_top(stack_t **stck, unsigned int line_nbr);
+void sub_2_at_top(stack_t **stck, unsigned int line_nbr);
+void div_sec_to_top(stack_t **stck, unsigned int line_nbr);
+void mul_sec_to_top(stack_t **stck, unsigned int line_nbr);
+void mod_sec_to_top(stack_t **stck, unsigned int line_nbr);
 /*String operations*/
-void print_char_top_stack(stack_t **stack, unsigned int line_number);
-void print_str_top_stack(stack_t **stack, __attribute__((unused))int ln);
-void rotl_stack(stack_t **stack, __attribute__((unused))unsigned int ln);
+void print_char_top_stack(stack_t **stck, unsigned int line_nbr);
+void print_str_top_stack(stack_t **stck, __attribute__((unused))int ln);
+void rotl_stack(stack_t **stck, __attribute__((unused))unsigned int ln);
+void rotr_stack(stack_t **stck, __attribute__((unused))unsigned int ln);
 /*Error hanlding*/
-void error_handling(int error_code, ...);
-void more_error_handling(int error_code, ...);
-void string_error_handling(int error_code, ...);
-void rotr_stack(stack_t **stack, __attribute__((unused))unsigned int ln);
+void error_handling(int err_code, ...);
+void more_error_handling(int err_code, ...);
+void string_error_handling(int err_code, ...);
 
 #endif

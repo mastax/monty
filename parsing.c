@@ -2,24 +2,24 @@
 
 /**
  * error_handling - Prints appropiate error messages determined by their error code.
- * @error_code: The error codes are the following:
- * (1) => The user does not give any file or more than one file to the program.
- * (2) => The file provided is not a file that can be opened or read.
- * (3) => The file provided contains an invalid instruction.
- * (4) => When the program is unable to malloc more memory.
- * (5) => When the parameter passed to the instruction "push" is not an int.
- * (6) => When the stack it empty for pint.
- * (7) => When the stack it empty for pop.
- * (8) => When stack is too short for operation.
+ * @err_code: The error codes are the following:
+ * 1 => The User Does.nt Give ANY File or MORE Than One File To The Program.
+ * 2 => The File can be opned .
+ * 3 => The file contains an invalid instruct.
+ * 4 => When Program is unable to memo alloc more memory.
+ * 5 => When the Param passed to the instruct "push" isn't an int.
+ * 6 => When stack it empty for pint.
+ * 7 => When  stack it empty for pop.
+ * 8 => When stack is too shoort for op.
  */
-void error_handling(int error_code, ...)
+void error_handling(int err_code, ...)
 {
 	va_list ag;
 	char *op;
 	int l_num;
 
-	va_start(ag, error_code);
-	switch (error_code)
+	va_start(ag, err_code);
+	switch (err_code)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
@@ -47,21 +47,21 @@ void error_handling(int error_code, ...)
 }
 
 /**
- * more_error_handling - handles errors.
- * @error_code: The error codes are the following:
- * (6) => When the stack it empty for pint.
- * (7) => When the stack it empty for pop.
- * (8) => When stack is too short for operation.
- * (9) => Division by zero.
+ * more_error_handling - handles the errors.
+ * @err_code: The error codes are the following:
+ * 6 => When stack it empty for p_int.
+ * 7 => When stack it empty for pop.
+ * 8 => When stack is too short for op.
+ * 9 => Division by 0.
  */
-void more_error_handling(int error_code, ...)
+void more_error_handling(int err_code, ...)
 {
 	va_list ag;
 	char *op;
 	int l_num;
 
-	va_start(ag, error_code);
-	switch (error_code)
+	va_start(ag, err_code);
+	switch (err_code)
 	{
 		case 6:
 			fprintf(stderr, "L%d: can't pint, stack empty\n",
@@ -88,19 +88,19 @@ void more_error_handling(int error_code, ...)
 }
 
 /**
- * string_err - handles errors.
- * @error_code: The error codes are the following:
- * (10) ~> The number inside a node is outside ASCII bounds.
- * (11) ~> The stack is empty.
+ * string_err - Handles errors.
+ * @err_code: The error codes are the following:
+ * 10 ~> The number inside a node is outside ASCII range.
+ * 11 ~> The stack is empty.
  */
-void string_error_handling(int error_code, ...)
+void string_error_handling(int err_code, ...)
 {
 	va_list ag;
 	int l_num;
 
-	va_start(ag, error_code);
+	va_start(ag, err_code);
 	l_num = va_arg(ag, int);
-	switch (error_code)
+	switch (err_code)
 	{
 		case 10:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
