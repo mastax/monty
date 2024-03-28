@@ -67,7 +67,7 @@ void mul_sec_to_top(stack_t **stck, unsigned int line_nbr);
 void mod_sec_to_top(stack_t **stck, unsigned int line_nbr);
 /*String operations*/
 void print_char_top_stack(stack_t **stck, unsigned int line_nbr);
-void print_str_top_stack(stack_t **stck, __attribute__((unused))int ln);
+void print_str_top_stack(stack_t **stck, __attribute__((unused))unsigned int ln);
 void rotl_stack(stack_t **stck, __attribute__((unused))unsigned int ln);
 void rotr_stack(stack_t **stck, __attribute__((unused))unsigned int ln);
 /*Error hanlding*/

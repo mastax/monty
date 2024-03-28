@@ -34,7 +34,7 @@ stack_t *creat_node(int nbr)
 		error_handling(4);
 	node->next = NULL;
 	node->prev = NULL;
-	node->nbr = nbr;
+	node->n = nbr;
 	return (node);
 }
 

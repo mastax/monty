@@ -2,7 +2,7 @@
 
 /**
  * ft_open - opens a file
- * @file_name: the file namepath
+ * @file_nam: the file namepath
  * Return: void
  */
 
@@ -42,8 +42,8 @@ void ft_read(FILE *fd)
 /**
  * parse_line_to_call_func - Separates each line into tokens to determine
  * which function to call
- * @buff: line from the file
- * @line_nbr: line number
+ * @buff: line from the file.
+ * @line_nbr: line number.
  * @form:  storage format. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
@@ -74,13 +74,13 @@ int parse_line_to_call_func(char *buff, int line_nbr, int form)
 /**
  * find_and_match - find the appropriate function for the opcode
  * @opcode: opcode
- * @value: argument of opcode
- * @format:  storage format. If 0 Nodes will be entered as a stack.
- * @ln: line number
+ * @val: argument of opcode.
+ * @form:  storage format. If 0 Nodes will be entered as a stack.
+ * @line: line number,
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find_and_match(char *opcode, char *val, int ln, int form)
+void find_and_match(char *opcode, char *val, int line, int form)
 {
 	int x;
 	int flg;
@@ -111,12 +111,12 @@ void find_and_match(char *opcode, char *val, int ln, int form)
 	{
 		if (strcmp(opcode, func_list[x].opcode) == 0)
 		{
-			call_function(func_list[x].f, opcode, val, ln, form);
+			call_function(func_list[x].f, opcode, val, line, form);
 			flg = 0;
 		}
 	}
 	if (flg == 1)
-		error_handling(3, ln, opcode);
+		error_handling(3, line, opcode);
 }
 
 

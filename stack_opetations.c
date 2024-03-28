@@ -4,6 +4,8 @@
  * mul_sec_to_top - Adds the top 2 elements of the stack.
  * @stck: Pointer to a pointer pointing to top node of the stack.
  * @line_nbr: Interger representing the line number of of the opcode.
+ *
+ * Description: Adds the top 2 elements of the stack.
  */
 void mul_sec_to_top(stack_t **stck, unsigned int line_nbr)
 {
@@ -23,7 +25,9 @@ void mul_sec_to_top(stack_t **stck, unsigned int line_nbr)
 /**
  * mod_sec_to_top - Adds the top two elements of the stack.
  * @stck: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * @line_nbr: Interger representing the line number of of the opcode.
+ *
+ * Description: Adds the top two elements of the stack.
  */
 void mod_sec_to_top(stack_t **stck, unsigned int line_nbr)
 {
