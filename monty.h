@@ -9,6 +9,8 @@
 #include <stdarg.h>
 #include <ctype.h>
 
+stack_t *head = NULL;
+
 /**
  * struct stack_s - Doubly Linked List Representation Of a Stack (Or Queue)
  * @n: integer
